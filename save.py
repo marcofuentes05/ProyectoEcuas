@@ -1,8 +1,3 @@
-"""
-Intento de usar RK4 para resolver el sistema de EDOS resultante del proyecto
-de Ecuaciones Diferenciales 1 - Pendulos acoplados con un resorte
-Segundo semestre de 2019
-"""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -65,50 +60,73 @@ def RungeKutta(thetadot, ydot, phidot, xdot,tI, thetai, yi, phii, xi, tF, h):
 		i+= 1
 	#Solo retornamos theta y phi porque x,y son variables mudas
 	return t,theta,phi
-"""
-t,theta,phi = RungeKutta(thetadot, ydot, phidot,xdot,0,3.14/2,0,0,0,4*3.14,0.0001)
 
-tst = []
-for i in range(len(t)):
-    tst.append(theta[i]+phi[i])
+
+
 
 t,theta,phi = RungeKutta(thetadot, ydotR, phidot,xdotR,0,3.14/2,0,0,0,4*3.14,0.0001)
 
 #Se muestran resultados
-plt. plot(t, theta,'r:',label='$\\theta(t)$')
-plt.plot(t, phi,'b--',label='$\\phi(t)$')
+plt. plot(t, theta,'r',label='$\\theta(t)$')
+plt.plot(t, phi,'b',label='$\\phi(t)$')
 plt.ylabel('Posicion angular (rad)')
 plt.xlabel('Tiempo (s)')
 plt.title('Posicion de los pendulos, $\\theta(0) = \pi / 2$')
 plt.legend(loc='upper right')
 plt.show()
 
-
-"""
-#plt.plot(t, tst,'g--')
-"""
-plt. plot(t, theta,'r--',label='Posición de la masa 1')
-plt.plot(t, phi,'b',label='Posición de la masa 2')
-plt.ylabel('Posicion angular (rad)')
-plt.xlabel('Tiempo (s)')
-plt.title('Posicion de los pendulos')
-plt.legend(loc='upper right')
-#plt.ylim(-0.8,0.8)
-plt.show()
-"""
-#Se hace una llamada al metodo y se almacenan los resultados en los arreglos t, theta, y phi
-t,theta,phi = RungeKutta(thetadot, ydot, phidot,xdot,0,3.14/6,0,0,0,7*3.14,0.0001)
-tst = []
-for i in range(len(t)):
-    tst.append(theta[i]+phi[i])
+"""t,theta,phi = RungeKutta(thetadot, ydotR, phidot,xdotR,0,3.14/3,0,0,0,4*3.14,0.0001)
 
 #Se muestran resultados
-plt. plot(t, theta,'c',label='$\\theta(t)$')
-plt.plot(t, phi,'b',label='$\\phi(t)$')
-#plt.plot(t, tst,'g--')
-plt.ylabel('Posición angular (rad)')
+plt. plot(t, theta,'r--',label='$\\theta(t)$')
+plt.plot(t, phi,'b--',label='$\\phi(t)$')
+plt.ylabel('Posicion angular (rad)')
 plt.xlabel('Tiempo (s)')
-plt.title('Posicion de los pendulos')
+plt.title('Posicion de los pendulos, $\\theta(0) = \pi/3$')
 plt.legend(loc='upper right')
-plt.ylim(-.8,0.85)
 plt.show()
+
+t,theta,phi = RungeKutta(thetadot, ydotR, phidot,xdotR,0,3.14/4,0,0,0,4*3.14,0.0001)
+
+#Se muestran resultados
+plt. plot(t, theta,'r--',label='$\\theta(t)$')
+plt.plot(t, phi,'b--',label='$\\phi(t)$')
+plt.ylabel('Posicion angular (rad)')
+plt.xlabel('Tiempo (s)')
+plt.title('Posicion de los pendulos, $\\theta(0) = \pi/4$')
+plt.legend(loc='upper right')
+plt.show()
+
+t,theta,phi = RungeKutta(thetadot, ydotR, phidot,xdotR,0,3.14/4,0,-3.14/4,0,2*3.14,0.0001)
+
+#Se muestran resultados
+plt. plot(t, theta,'r--',label='$\\theta(t)$')
+plt.plot(t, phi,'b--',label='$\\phi(t)$')
+plt.ylabel('Posicion angular (rad)')
+plt.xlabel('Tiempo (s)')
+plt.title('Posicion de los pendulos, $\\theta(0) = \pi/4$, $\\phi(0) = -\pi/4$')
+plt.legend(loc='upper right')
+plt.show()
+
+t,theta,phi = RungeKutta(thetadot, ydotR, phidot,xdotR,0,-3.14/4,0,3.14/4,0,2*3.14,0.0001)
+
+#Se muestran resultados
+plt. plot(t, theta,'r--',label='$\\theta(t)$')
+plt.plot(t, phi,'b--',label='$\\phi(t)$')
+plt.ylabel('Posicion angular (rad)')
+plt.xlabel('Tiempo (s)')
+plt.title('Posicion de los pendulos, $\\theta(0) = -\pi/4$, $\\phi(0) = \pi/4$')
+plt.legend(loc='upper right')
+plt.show()
+
+t,theta,phi = RungeKutta(thetadot, ydotR, phidot,xdotR,0,3.14/4,0,3.14/4,0,2*3.14,0.0001)
+
+#Se muestran resultados
+plt. plot(t, theta,'r',label='$\\theta(t)$')
+plt.plot(t, phi,'b:',label='$\\phi(t)$')
+plt.ylabel('Posicion angular (rad)')
+plt.xlabel('Tiempo (s)')
+plt.title('Posicion de los pendulos, $\\theta(0) = \pi/4$, $\\phi(0) = \pi/4$')
+plt.legend(loc='upper right')
+plt.show()
+"""
