@@ -98,7 +98,19 @@ plt.show()
 """
 #Se hace una llamada al metodo y se almacenan los resultados en los arreglos t, theta, y phi
 t,theta,phi = RungeKutta(thetadot, ydot, phidot,xdot,0,3.14/6,0,0,0,7*3.14,0.0001)
-tst = []
+tr,thetar,phir = RungeKutta(thetadot, ydotR, phidot,xdotR,0,3.14/6,0,0,0,7*3.14,0.0001)
+
+theta0 = []
+for i in range(len(t)):
+	theta0.append(thetar[i] - theta[i])
+
+suma = 0
+for j in range(len(theta0)):
+	suma +=theta0[j]
+
+resultado = suma/len(theta0)
+print(resultado)
+"""tst = []
 for i in range(len(t)):
     tst.append(theta[i]+phi[i])
 
@@ -111,4 +123,4 @@ plt.xlabel('Tiempo (s)')
 plt.title('Posicion de los pendulos')
 plt.legend(loc='upper right')
 plt.ylim(-.8,0.85)
-plt.show()
+plt.show()"""
